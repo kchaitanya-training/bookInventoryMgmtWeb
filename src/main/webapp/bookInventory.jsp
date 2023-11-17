@@ -7,8 +7,11 @@
 <form action="bookInsert" method="POST">
 
 
-	
-
+	<% if(request.getAttribute("insertRes")!=null){ %>
+	<%=request.getAttribute("insertRes") %>
+	<% } %>
+<br><br>
+<br><br>
   <label for="BookName">Book Name:</label>
   
   <input type="text" id="bName" name="bName"><br><br>

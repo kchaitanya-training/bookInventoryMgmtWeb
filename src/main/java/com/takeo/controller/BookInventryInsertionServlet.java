@@ -24,8 +24,9 @@ Book book=new Book(bName, null, Integer.parseInt(price), null);
 
 bookService.addBook(book);
 RequestDispatcher rd= req.getRequestDispatcher("/bookInventory.jsp");
-rd.forward(req, resp);
+
 req.setAttribute("insertRes", "success");
+rd.forward(req, resp);
 
 		
 		
