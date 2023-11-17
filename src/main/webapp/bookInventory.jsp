@@ -5,6 +5,10 @@
 <h1>The input element</h1>
 
 <form action="bookInsert" method="POST">
+
+
+	
+
   <label for="BookName">Book Name:</label>
   
   <input type="text" id="bName" name="bName"><br><br>

@@ -15,9 +15,7 @@ public class AddBookDao {
 		PreparedStatement ps=null;
 		  Connection con=null;
 		try {
-			
-	
-	    
+		
 	     con=DBConnection.getConnection();
 	     ps=con.prepareStatement("SELECT MAX(BOOK_ID) FROM bookinventory");
 	   ResultSet rs=  ps.executeQuery();

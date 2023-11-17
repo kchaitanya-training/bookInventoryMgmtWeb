@@ -2,6 +2,7 @@ package com.takeo.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +23,10 @@ BookService bookService=new BookService();
 Book book=new Book(bName, null, Integer.parseInt(price), null);
 
 bookService.addBook(book);
+RequestDispatcher rd= req.getRequestDispatcher("/bookInventory.jsp");
+rd.forward(req, resp);
+req.setAttribute("insertRes", "success");
+
 		
 		
 	}
