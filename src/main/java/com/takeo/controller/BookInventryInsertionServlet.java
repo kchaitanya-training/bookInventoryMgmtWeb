@@ -7,11 +7,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.takeo.model.Book;
+import com.takeo.service.BookService;
+
 public class BookInventryInsertionServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-System.out.println("hello testing 123");
+
+	String bName=	req.getParameter("bName");
+	String price=	req.getParameter("price");
+	
+BookService bookService=new BookService();
+Book book=new Book(bName, null, Integer.parseInt(price), null);
+
+bookService.addBook(book);
+		
+		
 	}
 
 }
