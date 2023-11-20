@@ -48,7 +48,7 @@ public class BookDao {
 	}
 	
 	
-	public void read() throws ClassNotFoundException, SQLException {
+	public List<Book> read() throws ClassNotFoundException, SQLException {
 		PreparedStatement ps=null;
 		  Connection con=null;
 		 con=DBConnection.getConnection();
@@ -56,13 +56,14 @@ public class BookDao {
 	    ResultSet rs=  ps.executeQuery();
 	   List<Book> listBooks=new ArrayList();
 	   while(rs.next()) {
+		   
 		 int id=  rs.getInt(0);
 		String bookname= rs.getString(1);
 		Double d= rs.getDouble(3);
 		
 	   }
 	   
-	   
+	   return null;
 	}
 
 }
