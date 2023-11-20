@@ -4,11 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.takeo.model.Book;
 import com.takeo.util.DBConnection;
 
-public class AddBookDao {
+public class BookDao {
 	
 	
 	public void addBook(Book book) {
@@ -43,6 +45,24 @@ public class AddBookDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	
+	public void read() throws ClassNotFoundException, SQLException {
+		PreparedStatement ps=null;
+		  Connection con=null;
+		 con=DBConnection.getConnection();
+	     ps=con.prepareStatement("SELECT * FROM bookinventory");
+	    ResultSet rs=  ps.executeQuery();
+	   List<Book> listBooks=new ArrayList();
+	   while(rs.next()) {
+		 int id=  rs.getInt(0);
+		String bookname= rs.getString(1);
+		Double d= rs.getDouble(3);
+		
+	   }
+	   
+	   
 	}
 
 }

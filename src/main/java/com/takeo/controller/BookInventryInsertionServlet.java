@@ -20,13 +20,21 @@ public class BookInventryInsertionServlet extends HttpServlet {
 	String price=	req.getParameter("price");
 	
 BookService bookService=new BookService();
-Book book=new Book(bName, null, Integer.parseInt(price), null);
+try {
+Book book=new Book(bName, null, Double.parseDouble(price), null);
 
 bookService.addBook(book);
+
 RequestDispatcher rd= req.getRequestDispatcher("/bookInventory.jsp");
 
 req.setAttribute("insertRes", "success");
 rd.forward(req, resp);
+}catch (NumberFormatException e) {
+	RequestDispatcher rd= req.getRequestDispatcher("/bookInventory.jsp");
+
+	req.setAttribute("insertRes", "there is an issue in your requet pls corret it");
+	rd.forward(req, resp);
+}
 
 		
 		

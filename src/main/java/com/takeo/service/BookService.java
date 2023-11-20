@@ -1,17 +1,24 @@
 package com.takeo.service;
 
-import com.takeo.dao.AddBookDao;
+import java.util.List;
+
+import com.takeo.dao.BookDao;
 import com.takeo.model.Book;
 
 public class BookService {
 	
-	AddBookDao addBookDao;
+	BookDao bookDao;
  
 	public BookService() {
-		 addBookDao=new AddBookDao();
+		bookDao=new BookDao();
 	}
 	
 	public void addBook(Book book) {
-		addBookDao.addBook(book);
+		bookDao.addBook(book);
+	}
+	
+	public List<Book> redBooks(){
+		
+		return null;
 	}
 }

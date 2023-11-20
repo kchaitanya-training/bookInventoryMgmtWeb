@@ -2,14 +2,16 @@
 <html>
 <body>
 
-<h1>The input element</h1>
+
 
 <form action="bookInsert" method="POST">
 
 
-	<% if(request.getAttribute("insertRes")!=null){ %>
-	<%=request.getAttribute("insertRes") %>
-	<% } %>
+	<% if(request.getAttribute("insertRes")!=null && ((String)request.getAttribute("insertRes")).equals("success")){ %>
+	<span style="color: green;font-size: 20px"> <%=request.getAttribute("insertRes") %> </span>
+	<% }else{ %>
+	<span style="color: red;font-size: 20px"> <%=request.getAttribute("insertRes") %> </span>
+	<%} %>
 <br><br>
 <br><br>
   <label for="BookName">Book Name:</label>

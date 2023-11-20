@@ -1,5 +1,7 @@
 package com.takeo.model;
 
+import java.sql.Date;
+
 public class Book {
 	
 	private int bookId;
@@ -27,6 +29,24 @@ public class Book {
 		this.price = price;
 		this.bookDescription = bookDescription;
 	}
+	
+	
+	
+
+	public Book(int bookId, String bookName, String category, double price, String bookDescription, Date date,
+			String availability) {
+		
+		this.bookId = bookId;
+		this.bookName = bookName;
+		this.category = category;
+		this.price = price;
+		this.bookDescription = bookDescription;
+		this.date = date;
+		this.availability = availability;
+	}
+
+
+
 
 	public int getBookId() {
 		return bookId;
