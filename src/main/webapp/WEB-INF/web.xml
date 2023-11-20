@@ -36,6 +36,16 @@
 <servlet-class>com.takeo.controller.BookInventryInsertionServlet</servlet-class>
 </servlet>
 
+<servlet>
+<servlet-name>readBook</servlet-name>
+<servlet-class>com.takeo.controller.BookInventryReadServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>readBook</servlet-name>
+<url-pattern>/readBook</url-pattern>
+</servlet-mapping>
+
 <servlet-mapping>
 <servlet-name>bookInsert</servlet-name>
 <url-pattern>/bookInsert</url-pattern>

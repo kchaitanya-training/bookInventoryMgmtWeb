@@ -21,7 +21,9 @@ public class BookInventryInsertionServlet extends HttpServlet {
 	
 BookService bookService=new BookService();
 try {
-Book book=new Book(bName, null, Double.parseDouble(price), null);
+Book book=new Book();
+book.setBookName(bName);
+book.setPrice(Double.parseDouble(price));
 
 bookService.addBook(book);
 

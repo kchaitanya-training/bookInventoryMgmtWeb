@@ -9,7 +9,7 @@
 
 	<% if(request.getAttribute("insertRes")!=null && ((String)request.getAttribute("insertRes")).equals("success")){ %>
 	<span style="color: green;font-size: 20px"> <%=request.getAttribute("insertRes") %> </span>
-	<% }else{ %>
+	<% }else if(request.getAttribute("insertRes")!=null){ %>
 	<span style="color: red;font-size: 20px"> <%=request.getAttribute("insertRes") %> </span>
 	<%} %>
 <br><br>

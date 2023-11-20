@@ -1,5 +1,6 @@
 package com.takeo.service;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.takeo.dao.BookDao;
@@ -17,8 +18,8 @@ public class BookService {
 		bookDao.addBook(book);
 	}
 	
-	public List<Book> redBooks(){
+	public List<Book> redBooks() throws ClassNotFoundException, SQLException{
 		
-		return null;
+		return bookDao.readBooks();
 	}
 }
